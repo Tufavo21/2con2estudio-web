@@ -1,0 +1,17 @@
+node_modules
+dist
+.playwright-mcp
+shots
+dist-share
+share
+entrega
+.env.local
+.env.*.local
+.dev.vars
+worker/.dev.vars
+worker/.data
+.wrangler
+
+worker/wrangler.cloudflare.toml
+deploy-cloudflare.log
+subir-github.log
