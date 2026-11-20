@@ -4,7 +4,6 @@ import { useTick, useViewport, reducedMotion } from '../lib/hooks.js';
 import { createSpring, range, easeOut } from '../lib/spring.js';
 import { onReady } from '../lib/ready.js';
 import { DEMO_PHOTOS } from '../content/demo-content.js';
-import HeroPieces from '../components/HeroPieces.jsx';
 import Picture from '../components/Picture.jsx';
 import { Button } from '../components/ui.jsx';
 
@@ -106,7 +105,6 @@ export default function Hero() {
     <section id="top" ref={root} className={`hero ${live ? 'is-live' : ''}`} data-logo="light" aria-labelledby="hero-title">
       <div className="hero__pin">
         <div className="hero__head grid" ref={head}>
-          <HeroPieces />
           <h1 className="hero__title display" id="hero-title">
             <span className="sr-only">{full}</span>
             <span className="hero__a" aria-hidden="true">{chars(a, 'hero__line--a')}</span>

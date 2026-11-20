@@ -223,18 +223,6 @@ p { text-wrap: pretty; }
 }
 
 /* M10 — del plano a la obra */
-.plan { margin-top: clamp(120px, 20vh, 220px); row-gap: 32px; align-items: center; }
-.plan__text { grid-column: 1 / 6; display: flex; flex-direction: column; gap: 18px; align-items: flex-start; }
-.plan__title { font-size: clamp(52px, 6.4vw, 112px); }
-.plan__hint { font-size: 16px; color: var(--ink-2); max-width: 36ch; }
-.plan__note { max-width: 40ch; }
-.plan__box { grid-column: 6 / 13; position: relative; aspect-ratio: 4 / 5; overflow: hidden; cursor: crosshair; touch-action: pan-y; background: var(--paper); border: 1px solid var(--hair); }
-.plan__pic, .plan__pic img { width: 100%; height: 100%; }
-.plan__pic img { object-fit: cover; }
-.plan__pic--photo { position: absolute; inset: 0; opacity: 0; transition: opacity .7s var(--ease); }
-.plan__box.is-full .plan__pic--photo { opacity: 1; }
-.plan__canvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
-@media (max-width: 899px) { .plan__text, .plan__box { grid-column: 1 / -1; } .plan__box { order: -1; } }
 
 /* ── 03 Servicios ── */
 .services__list { border-bottom: 1px solid var(--hair); }
@@ -441,8 +429,6 @@ p { text-wrap: pretty; }
 }
 .loader__skip:hover { background: var(--ink); color: var(--paper); }
 
-/* ── M11: piezas ambientales del hero, siempre por detrás del titular ── */
-.hero__pieces { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
 .hero__title { position: relative; z-index: 1; }
 
 /* ── Etiqueta de demostración en proyectos ── */
@@ -516,3 +502,4 @@ p { text-wrap: pretty; }
   .phases__layer:first-child, .phases__layer.is-in { opacity: 1; }
   .phases__name { animation: none; }
 }
+

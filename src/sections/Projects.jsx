@@ -4,7 +4,6 @@ import Picture from '../components/Picture.jsx';
 import Phases from '../components/Phases.jsx';
 import { DEMO_IMAGES } from '../content/demo-images.js';
 import { SectionHead } from '../components/ui.jsx';
-import PlanReveal from './PlanReveal.jsx';
 
 // Fotos a sangre alternadas con columnas asimétricas 7/5 y 5/7.
 // [DEMO-IMG] Las fotos son de demostración (Unsplash): cada pie lleva «Proyecto de demostración».
@@ -53,7 +52,6 @@ export default function Projects({ index, total }) {
           );
         })}
       </ol>
-      <PlanReveal />
     </section>
   );
 }

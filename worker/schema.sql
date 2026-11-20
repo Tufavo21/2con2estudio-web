@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS leads (
   email       TEXT NOT NULL,
   phone       TEXT NOT NULL,
   reform_type TEXT NOT NULL,                    -- integral | cocina | bano | interiorismo | otra
-  finishes    TEXT NOT NULL,                    -- estandar | medio | alto
+  finishes    TEXT NOT NULL,                    -- premium | altagama | lujo
   area_m2     REAL NOT NULL,
   message     TEXT NOT NULL,
   consent_at  TEXT NOT NULL,                    -- momento en que marcó el consentimiento

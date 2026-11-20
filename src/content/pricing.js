@@ -5,15 +5,15 @@
 
 export const SHOW_ESTIMATE = false;
 
-export const FINISHES = ['estandar', 'medio', 'alto'];
+export const FINISHES = ['premium', 'altagama', 'lujo'];
 export const TYPES = ['integral', 'cocina', 'bano', 'interiorismo', 'otra'];
 
 export const PRICING = {
-  integral: { estandar: { min: null, max: null }, medio: { min: null, max: null }, alto: { min: null, max: null } },
-  cocina: { estandar: { min: null, max: null }, medio: { min: null, max: null }, alto: { min: null, max: null } },
-  bano: { estandar: { min: null, max: null }, medio: { min: null, max: null }, alto: { min: null, max: null } },
-  interiorismo: { estandar: { min: null, max: null }, medio: { min: null, max: null }, alto: { min: null, max: null } },
-  otra: { estandar: { min: null, max: null }, medio: { min: null, max: null }, alto: { min: null, max: null } },
+  integral: { premium: { min: null, max: null }, altagama: { min: null, max: null }, lujo: { min: null, max: null } },
+  cocina: { premium: { min: null, max: null }, altagama: { min: null, max: null }, lujo: { min: null, max: null } },
+  bano: { premium: { min: null, max: null }, altagama: { min: null, max: null }, lujo: { min: null, max: null } },
+  interiorismo: { premium: { min: null, max: null }, altagama: { min: null, max: null }, lujo: { min: null, max: null } },
+  otra: { premium: { min: null, max: null }, altagama: { min: null, max: null }, lujo: { min: null, max: null } },
 };
 
 // Devuelve { min, max } en euros redondeados a centenas, o null si no hay que mostrar nada.

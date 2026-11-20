@@ -324,3 +324,9 @@ Se añade un Worker de Cloudflare (`worker/`) y se conecta el formulario existen
   - Playwright (Chromium) sobre la página de baja a 1440 y 390 en ES y EN, sin errores de consola (`shots/lead/`).
   - **No verificado en este entorno**: el formulario React compilado (no hay `node_modules` ni red para instalarlos), `wrangler dev`/D1 real, el envío real por Resend y el webhook contra Cal.com. Falta ejecutar `scripts/verify-shots.cjs` para las capturas del formulario a 1440 y 390 con `npm run dev`. La sintaxis de `Contact.jsx` y `submit.js` se comprobó con el analizador de TypeScript.
 
+
+## 2026-11-19 · 2con2estudio · Prompt Maestro v6.4 (Regla 8 ampliada + 8b) — modo guía
+- Cambios de diseño: quitadas las figuras del hero y la sección «Del plano a la obra»; añadido banner final con el logo que se expande.
+- Regla 8: cabeceras de seguridad en `public/_headers` (CSP, X-Frame-Options, X-Content-Type-Options, HSTS, Referrer-Policy, Permissions-Policy). Ya existían: validación en servidor, honeypot, límite por IP, lista de orígenes (`ALLOWED_ORIGINS`), sin claves en el cliente.
+- 8b (modo guía, cliente/DOM, auth/web, despliegue, cadena de suministro, IA/LLM): sin recursos externos en el front; el borrador de IA solo va al propietario y no se envía.
+- Pendiente: `npm audit` (sin red aquí), `ALLOWED_ORIGINS` vacío (rellenar con el dominio real), probar la CSP en el navegador, Cloudflare WAF / SSL Full (strict) / 2FA (lo hace el usuario), revisión con Codex (Fase 6) no ejecutada.
