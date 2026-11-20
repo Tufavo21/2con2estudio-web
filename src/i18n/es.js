@@ -19,7 +19,7 @@ export default {
   hero: {
     a: ['INTERIORES', 'A MEDIDA'],
     b: ['EN', 'VALENCIA'],
-    lede: 'Proyectamos pocas casas al año y las acompañamos hasta el último detalle.',
+    lede: 'Del primer plano a la última llave: un solo equipo diseña y construye tu casa.',
     body: 'Bea Pérez y Gonzalo Pau. Interiorismo de lujo y reformas a medida en Valencia.',
     cta: 'Cuéntanos tu proyecto', secondary: 'Ver proyectos',
     caption: 'Salón · proyecto de demostración',

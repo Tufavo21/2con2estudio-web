@@ -20,7 +20,7 @@ export default {
     // [DEMO: pendiente de aprobar] provisional translation of the real slogan
     a: ['BESPOKE', 'INTERIORS'],
     b: ['IN', 'VALENCIA'],
-    lede: 'We take on few homes a year and see each one through to the last detail.',
+    lede: 'From the first drawing to the last key: one team designs and builds your home.',
     body: 'Bea Pérez and Gonzalo Pau. Luxury interior design and bespoke renovation in Valencia.',
     cta: 'Tell us about your project', secondary: 'See projects',
     caption: 'Living room · demo project',
