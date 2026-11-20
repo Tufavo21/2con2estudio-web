@@ -30,7 +30,7 @@ const MESSAGES = {
 };
 export const messageFor = (lang, code) => (MESSAGES[lang] || MESSAGES.es)[code] || MESSAGES.es.required;
 
-const STRING_FIELDS = ['nombre', 'email', 'telefono', 'tipo', 'acabados', 'descripcion'];
+const STRING_FIELDS = ['nombre', 'email', 'telefono', 'tipo', 'vivienda', 'zona', 'acabados', 'descripcion'];
 
 // Devuelve { kind: 'invalid', errors } | { kind: 'honeypot' } | { kind: 'ok', lead, photos }
 export function parseLead(body) {
@@ -70,6 +70,8 @@ export function parseLead(body) {
       email: raw.email,
       phone: raw.telefono,
       reform_type: raw.tipo,
+      property: raw.vivienda,
+      zone: raw.zona,
       finishes: raw.acabados,
       area_m2: Number(raw.m2),
       message: raw.descripcion,

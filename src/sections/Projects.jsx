@@ -5,9 +5,9 @@ import Phases from '../components/Phases.jsx';
 import { DEMO_IMAGES } from '../content/demo-images.js';
 import { SectionHead } from '../components/ui.jsx';
 
-// Fotos a sangre alternadas con columnas asimétricas 7/5 y 5/7.
+// Pocas imágenes y grandes: cada proyecto a ancho completo.
 // [DEMO-IMG] Las fotos son de demostración (Unsplash): cada pie lleva «Proyecto de demostración».
-const LAYOUT = ['l75', 'l57', 'full', 'l75'];
+const LAYOUT = ['full', 'full', 'full', 'full'];
 
 export default function Projects({ index, total }) {
   const { t, pick } = useI18n();

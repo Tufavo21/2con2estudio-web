@@ -1,18 +1,19 @@
 /* ═══ 2con2estudio · v4 «Atelier Mono» — editorial blanco y negro ═══ */
 :root {
-  --paper: #F6F5F2;
-  --ink: #0B0B0B;
-  --ink-2: #3A3A38;
-  --mute: #8C8A85; /* 3.3:1 sobre papel: solo texto grande o decoración */
-  --hair: rgba(11, 11, 11, 0.14);
-  --hair-inv: rgba(246, 245, 242, 0.2);
+  --paper: #EDE6DA;
+  --ink: #15120E;
+  --ink-2: #4A433A;
+  --accent: #9A7B4C; /* bronce discreto: solo detalles y texto grande */
+  --mute: #8A8071; /* 3.3:1 sobre papel: solo texto grande o decoración */
+  --hair: rgba(21, 18, 14, 0.16);
+  --hair-inv: rgba(237, 230, 218, 0.22);
   --m: 5vw; /* márgenes */
   --gut: clamp(12px, 1.6vw, 28px);
   --nav-h: 72px;
   --pad: clamp(104px, 16vh, 184px); /* padding vertical de sección (14–18vh) */
   --display: clamp(64px, 11vw, 200px);
   --ease: cubic-bezier(0.19, 1, 0.22, 1);
-  --f-display: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  --f-display: 'Cormorant Garamond', Georgia, serif;
   --f-body: 'Inter Variable', 'Inter', system-ui, sans-serif;
   --f-serif: 'Cormorant Garamond', Georgia, serif;
   color-scheme: light;
@@ -36,6 +37,7 @@ body {
 img { display: block; max-width: 100%; height: auto; }
 picture { display: block; }
 a { color: inherit; text-underline-offset: 0.22em; text-decoration-thickness: 1px; }
+a:hover { color: var(--accent); }
 button { font: inherit; color: inherit; }
 h1, h2, h3, p, ul, ol, dl, dd, figure, blockquote { margin: 0; }
 ul, ol { padding: 0; list-style: none; }
@@ -49,7 +51,7 @@ section[id], footer { scroll-margin-top: var(--nav-h); }
 .break { overflow-wrap: anywhere; }
 
 /* Tipografía */
-.display { font-family: var(--f-display); font-weight: 700; text-transform: uppercase; letter-spacing: -0.01em; line-height: 0.9; text-wrap: balance; }
+.display { font-family: var(--f-display); font-weight: 500; text-transform: uppercase; letter-spacing: 0.01em; line-height: 0.95; text-wrap: balance; }
 .label { font-family: var(--f-body); font-weight: 500; font-size: 12px; line-height: 1.35; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-2); }
 .lede { font-family: var(--f-serif); font-style: italic; font-weight: 400; font-size: clamp(22px, 2vw, 30px); line-height: 1.25; color: var(--ink); text-wrap: pretty; }
 p { text-wrap: pretty; }
@@ -126,7 +128,7 @@ p { text-wrap: pretty; }
 .hero { position: relative; }
 .hero__pin { position: relative; }
 .hero__head { padding-top: calc(var(--nav-h) + clamp(20px, 4vh, 48px)); row-gap: 28px; position: relative; }
-.hero__title { grid-area: 1 / 1 / 2 / 13; font-size: var(--display); }
+.hero__title { grid-area: 1 / 1 / 2 / 13; font-size: calc(var(--display) * 0.8); }
 .hero__a, .hero__b { display: block; }
 .hero__b { text-align: right; }
 .hero__line { display: block; white-space: nowrap; }
@@ -204,7 +206,7 @@ p { text-wrap: pretty; }
 .proj--full .proj__meta { grid-column: 7 / 13; }
 .proj--full .proj__note { grid-column: 7 / 13; }
 .proj__cap { display: flex; flex-direction: column; gap: 16px; }
-.proj__name { font-family: var(--f-display); font-weight: 700; text-transform: uppercase; font-size: clamp(36px, 3.6vw, 60px); line-height: 0.92; letter-spacing: -0.005em; }
+.proj__name { font-family: var(--f-display); font-weight: 500; text-transform: uppercase; font-size: clamp(36px, 3.6vw, 60px); line-height: 0.92; letter-spacing: -0.005em; }
 .proj__meta { display: flex; flex-wrap: wrap; gap: 0; border-top: 1px solid var(--hair); }
 .proj__meta > div { padding: 12px 20px 0 0; margin-right: 20px; display: flex; flex-direction: column; gap: 4px; }
 .proj__meta > div + div { border-left: 1px solid var(--hair); padding-left: 20px; }
@@ -227,7 +229,7 @@ p { text-wrap: pretty; }
 /* ── 03 Servicios ── */
 .services__list { border-bottom: 1px solid var(--hair); }
 .svc { padding-block: clamp(24px, 3.4vh, 40px); border-top: 1px solid var(--hair); align-items: baseline; row-gap: 10px; }
-.svc__name { grid-column: 3 / 8; font-family: var(--f-display); font-weight: 700; text-transform: uppercase; font-size: clamp(34px, 3.8vw, 64px); line-height: .95; transition: transform .6s var(--ease); }
+.svc__name { grid-column: 3 / 8; font-family: var(--f-display); font-weight: 500; text-transform: uppercase; font-size: clamp(34px, 3.8vw, 64px); line-height: .95; transition: transform .6s var(--ease); }
 .svc__text { grid-column: 8 / 13; color: var(--ink-2); font-size: 17px; max-width: 46ch; }
 @media (hover: hover) and (pointer: fine) { .svc:hover .svc__name { transform: translate3d(14px, 0, 0); } }
 @media (max-width: 767px) { .svc__name, .svc__text { grid-column: 1 / -1; } }
@@ -334,12 +336,12 @@ p { text-wrap: pretty; }
 .field__hint { display: flex; justify-content: space-between; gap: 16px; margin-top: 8px; font-size: 14px; color: var(--ink-2); }
 .field__count { font-variant-numeric: tabular-nums; white-space: nowrap; }
 .form__est { border: 1px solid var(--ink); padding: 16px; display: flex; flex-direction: column; gap: 6px; }
-.form__est-n { font-family: var(--f-display); font-weight: 700; font-size: 40px; line-height: 1; font-variant-numeric: tabular-nums; }
+.form__est-n { font-family: var(--f-display); font-weight: 500; font-size: 40px; line-height: 1; font-variant-numeric: tabular-nums; }
 .form__est-note { font-size: 14px; color: var(--ink-2); }
 .drop-wrap { display: flex; flex-direction: column; gap: 10px; }
-.drop { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; text-align: center; padding: 32px 20px; border: 1px dashed var(--ink); cursor: pointer; font-size: 16px; transition: background-color .2s; }
+.drop { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; text-align: center; padding: 14px 16px; border: 1px dashed var(--hair); color: var(--ink-2); cursor: pointer; font-size: 14px; transition: background-color .2s; }
 .drop u { text-underline-offset: 0.2em; }
-.drop.is-drag { background: rgba(11, 11, 11, 0.05); }
+.drop.is-drag { background: rgba(21, 18, 14, 0.05); }
 .drop:focus-within { outline: 2px solid var(--ink); outline-offset: 3px; }
 @media (hover: hover) and (pointer: fine) { .drop:hover { background: rgba(11, 11, 11, 0.03); } }
 .drop__hint { font-size: 13px; color: var(--ink-2); }

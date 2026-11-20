@@ -21,10 +21,10 @@ test('con un baremo rellenado y activado devuelve un rango redondeado', () => {
 
 test('todo obligatorio salvo las fotos; descripción mínimo 10 caracteres', () => {
   const e = validate({});
-  assert.deepEqual(Object.keys(e), ['nombre', 'email', 'telefono', 'tipo', 'acabados', 'm2', 'descripcion', 'privacidad']);
-  const bad = validate({ nombre: 'A', email: 'x@y', telefono: '123', tipo: 'cocina', acabados: 'medio', m2: '0', descripcion: 'corto', privacidad: false });
+  assert.deepEqual(Object.keys(e), ['nombre', 'email', 'telefono', 'tipo', 'vivienda', 'zona', 'acabados', 'm2', 'descripcion', 'privacidad']);
+  const bad = validate({ nombre: 'A', email: 'x@y', telefono: '123', tipo: 'cocina', vivienda: 'atico', zona: 'ruzafa', acabados: 'altagama', m2: '0', descripcion: 'corto', privacidad: false });
   assert.deepEqual(bad, { nombre: 'name', email: 'email', telefono: 'phone', m2: 'm2', descripcion: 'minLen', privacidad: 'privacy' });
-  const ok = validate({ nombre: 'Ana Prueba', email: 'ana@ejemplo.test', telefono: '+34 600 000 000', tipo: 'bano', acabados: 'alto', m2: '8', descripcion: 'Cambiar bañera por plato de ducha', privacidad: true });
+  const ok = validate({ nombre: 'Ana Prueba', email: 'ana@ejemplo.test', telefono: '+34 600 000 000', tipo: 'bano', vivienda: 'casa', zona: 'playa', acabados: 'lujo', m2: '8', descripcion: 'Cambiar bañera por plato de ducha', privacidad: true });
   assert.deepEqual(ok, {});
 });
 

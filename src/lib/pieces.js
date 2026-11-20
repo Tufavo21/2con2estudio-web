@@ -2,7 +2,7 @@
 // losa, listón, marco cuadrado, arco de vano y círculo. Coordenadas centradas en (0, 0).
 // Las usa la carga de entrada (SVG) y las piezas ambientales del hero (canvas 2D).
 
-export const COLORS = { paper: '#F6F5F2', bone: '#ECEAE4', graphite: '#3A3A38', ink: '#0B0B0B' };
+export const COLORS = { paper: '#EDE6DA', bone: '#E2D9C9', graphite: '#4A433A', ink: '#15120E' };
 
 export function piecePath(shape, w, h = w) {
   const x = -w / 2; const y = -h / 2;

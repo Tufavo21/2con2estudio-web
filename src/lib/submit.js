@@ -17,6 +17,8 @@ export function buildMailto({ data, photos, labels }) {
     `${labels.nombre}: ${data.nombre}`,
     `${labels.email}: ${data.email}`,
     `${labels.telefono}: ${data.telefono}`,
+    `${labels.vivienda}: ${labels.viviendaValue}`,
+    `${labels.zona}: ${labels.zonaValue}`,
     `${labels.tipo}: ${labels.tipoValue}`,
     `${labels.acabados}: ${labels.acabadosValue}`,
     `${labels.m2}: ${data.m2}`,

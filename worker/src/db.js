@@ -4,11 +4,11 @@ export async function insertLead(db, lead) {
   await db
     .prepare(
       `INSERT INTO leads (id, created_at, lang, name, email, phone, reform_type, finishes, area_m2, message,
-                          consent_at, status, status_at, is_demo)
-       VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, 'new', ?12, ?13)`,
+                          consent_at, status, status_at, is_demo, property, zone)
+       VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, 'new', ?12, ?13, ?14, ?15)`,
     )
     .bind(lead.id, lead.created_at, lead.lang, lead.name, lead.email, lead.phone, lead.reform_type, lead.finishes,
-      lead.area_m2, lead.message, lead.consent_at, lead.created_at, lead.is_demo ? 1 : 0)
+      lead.area_m2, lead.message, lead.consent_at, lead.created_at, lead.is_demo ? 1 : 0, lead.property, lead.zone)
     .run();
 }
 

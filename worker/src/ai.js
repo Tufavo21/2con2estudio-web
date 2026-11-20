@@ -22,7 +22,7 @@ export function buildMessages(lead) {
       role: 'user',
       content: JSON.stringify({
         solicitud: {
-          idioma: lead.lang, tipo: lead.reform_type, acabados: lead.finishes, m2: lead.area_m2,
+          idioma: lead.lang, tipo: lead.reform_type, vivienda: lead.property, zona: lead.zone, acabados: lead.finishes, m2: lead.area_m2,
           nombre: lead.name, descripcion: lead.message,
         },
       }),

@@ -1,4 +1,4 @@
-// Plantillas de correo (ES/EN). Sobrias: sin plazos, precios ni promesas de resultado.
+// Plantillas de correo (ES/EN). Sobrias: sin precios ni promesas de resultado; solo se promete la respuesta personal en 24 h.
 // Todo texto del visitante se escapa en el HTML y se limpia de saltos de línea en los asuntos.
 import es from '../../src/i18n/es.js';
 import en from '../../src/i18n/en.js';
@@ -13,9 +13,9 @@ const T = {
   es: {
     hello: (n) => `Hola ${n},`,
     sign: 'Bea Pérez y Gonzalo Pau',
-    confirmSubject: 'Hemos recibido tu solicitud · 2con2estudio',
-    confirmIntro: (tipo, m2) => `Hemos recibido tu solicitud de ${tipo.toLowerCase()} (${m2} m²). Vamos a revisar la información que nos has enviado y nos pondremos en contacto contigo.`,
-    confirmBook: 'Si prefieres comentarlo de viva voz, puedes reservar una llamada en este enlace:',
+    confirmSubject: 'Te responderemos personalmente en 24 horas · 2con2estudio',
+    confirmIntro: (tipo, m2) => `Gracias por escribirnos. Hemos recibido tu proyecto de ${tipo.toLowerCase()} (${m2} m²) y lo vamos a leer con calma. Te responderemos personalmente en 24 horas.`,
+    confirmBook: 'Si prefieres adelantar la conversación, puedes reservar una llamada en este enlace:',
     confirmPhotos: (n) => (n > 0 ? 'Si quieres que veamos las fotos de la vivienda, responde a este correo y adjúntalas.' : 'Si tienes fotos de la vivienda, puedes responder a este correo y adjuntarlas.'),
     r1Subject: '¿Quieres que hablemos de tu reforma? · 2con2estudio',
     r1Body: (tipo) => `Hace un día recibimos tu solicitud de ${tipo.toLowerCase()}. Si sigues interesado/a, puedes reservar una llamada para comentarla:`,
@@ -29,16 +29,16 @@ const T = {
     postal: 'Dirección postal:',
     ownerSubject: (tipo, m2, nombre) => `Nueva solicitud · ${tipo} · ${m2} m² · ${nombre}`,
     ownerLead: 'Nueva solicitud recibida desde la web.',
-    labels: { nombre: 'Nombre', email: 'Email', telefono: 'Teléfono', tipo: 'Tipo de reforma', acabados: 'Acabados', m2: 'Superficie', mensaje: 'Mensaje', estado: 'Estado', id: 'Referencia', fecha: 'Fecha', fotos: 'Fotos' },
+    labels: { nombre: 'Nombre', email: 'Email', telefono: 'Teléfono', vivienda: 'Vivienda', zona: 'Zona', tipo: 'Tipo de proyecto', acabados: 'Acabados', m2: 'Superficie', mensaje: 'Mensaje', estado: 'Estado', id: 'Referencia', fecha: 'Fecha', fotos: 'Fotos' },
     photos: (n) => (n > 0 ? `El visitante seleccionó ${n} foto(s); no se han subido (se le ha pedido que las envíe por correo).` : 'Sin fotos.'),
     aiTitle: 'Borrador sugerido (generado por IA, NO enviado; revísalo antes de usarlo)',
   },
   en: {
     hello: (n) => `Hello ${n},`,
     sign: 'Bea Pérez and Gonzalo Pau',
-    confirmSubject: 'We have received your request · 2con2estudio',
-    confirmIntro: (tipo, m2) => `We have received your ${tipo.toLowerCase()} request (${m2} m²). We will review the information you sent and get in touch with you.`,
-    confirmBook: 'If you would rather talk it through, you can book a call here:',
+    confirmSubject: 'We will reply to you personally within 24 hours · 2con2estudio',
+    confirmIntro: (tipo, m2) => `Thank you for writing to us. We have received your ${tipo.toLowerCase()} project (${m2} m²) and will read it carefully. We will reply to you personally within 24 hours.`,
+    confirmBook: 'If you would like to speak sooner, you can book a call here:',
     confirmPhotos: (n) => (n > 0 ? 'If you would like us to see photos of the property, reply to this email and attach them.' : 'If you have photos of the property, you can reply to this email and attach them.'),
     r1Subject: 'Would you like to talk about your renovation? · 2con2estudio',
     r1Body: (tipo) => `We received your ${tipo.toLowerCase()} request a day ago. If you are still interested, you can book a call to discuss it:`,
@@ -110,6 +110,7 @@ export function ownerSummary({ lead, cfg, photos = 0, aiDraft = '' }) {
   const l = { tipo: DICT.es.tipos[lead.reform_type] || lead.reform_type, acabados: DICT.es.acabadosOpts[lead.finishes] || lead.finishes };
   const rows = [
     [t.labels.nombre, lead.name], [t.labels.email, lead.email], [t.labels.telefono, lead.phone],
+    [t.labels.vivienda, DICT.es.viviendas[lead.property] || lead.property || '—'], [t.labels.zona, DICT.es.zonas[lead.zone] || lead.zone || '—'],
     [t.labels.tipo, l.tipo], [t.labels.acabados, l.acabados], [t.labels.m2, `${fmtM2(lead.area_m2)} m²`],
     [t.labels.fotos, t.photos(photos)], [t.labels.estado, `${lead.status || 'new'} · idioma: ${lead.lang}`],
     [t.labels.fecha, lead.created_at], [t.labels.id, lead.id],

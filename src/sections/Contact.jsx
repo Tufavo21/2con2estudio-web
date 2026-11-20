@@ -3,12 +3,12 @@ import { AnimatePresence, m } from 'motion/react';
 import { useI18n } from '../i18n/index.jsx';
 import { reducedMotion } from '../lib/hooks.js';
 import { BUSINESS, FALTA, SHOW_PLACEHOLDERS } from '../content/business.js';
-import { TYPES, FINISHES, estimate } from '../content/pricing.js';
+import { TYPES, FINISHES, PROPERTIES, ZONES, estimate } from '../content/pricing.js';
 import { validate, VALIDATORS, FIELD_ORDER, MIN_TEXT, MAX_TEXT, MAX_PHOTOS, MAX_PHOTO_MB, photoProblem } from '../lib/validate.js';
 import { submitRequest, buildMailto } from '../lib/submit.js';
 import { SectionHead, Button, Icon, Falta } from '../components/ui.jsx';
 
-const EMPTY = { nombre: '', email: '', telefono: '', tipo: '', acabados: '', m2: '', descripcion: '', privacidad: false, website: '' };
+const EMPTY = { nombre: '', email: '', telefono: '', tipo: '', vivienda: '', zona: '', acabados: '', m2: '', descripcion: '', privacidad: false, website: '' };
 
 function Err({ id, code, t }) {
   if (!code) return null;
@@ -82,6 +82,8 @@ export default function Contact({ index, total }) {
     const labels = {
       ...t('contact.fields'),
       tipoValue: t(`contact.tipos.${data.tipo}`),
+      viviendaValue: t(`contact.viviendas.${data.vivienda}`),
+      zonaValue: t(`contact.zonas.${data.zona}`),
       acabadosValue: t(`contact.acabadosOpts.${data.acabados}`),
     };
     const res = await submitRequest({ data: { ...data, website: undefined }, photos, labels, lang });
@@ -156,6 +158,10 @@ export default function Contact({ index, total }) {
           <div className="form__row form__row--2">
             {text('email', 'email', { autoComplete: 'email', inputMode: 'email', maxLength: 200 })}
             {text('telefono', 'tel', { autoComplete: 'tel', inputMode: 'tel', maxLength: 20 })}
+          </div>
+          <div className="form__row form__row--2">
+            {select('vivienda', PROPERTIES, 'viviendas')}
+            {select('zona', ZONES, 'zonas')}
           </div>
           <div className="form__row form__row--3">
             {select('tipo', TYPES, 'tipos')}

@@ -129,6 +129,8 @@ if (!dbId) {
 if (!dbId) fail('No encuentro el identificador de la base de datos D1.');
 writeConfig({ dbId, baseUrl: '' });
 if (npx(['d1', 'execute', DB_NAME, '--file=worker/schema.sql', '--remote', '-y', '--config', CFG]).code !== 0) fail('Falló la creación de tablas en D1.');
+// Bases creadas antes de vivienda/zona: añade las columnas (si ya existen, el error se ignora).
+for (const col of ['property', 'zone']) npx(['d1', 'execute', DB_NAME, `--command=ALTER TABLE leads ADD COLUMN ${col} TEXT`, '--remote', '-y', '--config', CFG]);
 
 // ── 4. Primer despliegue (para conocer la dirección pública) ─────────────────────────────────────────────────────
 say('4/7 Desplegando…');

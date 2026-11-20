@@ -1,5 +1,5 @@
 // Validación del formulario de presupuesto. Devuelve códigos; la interfaz los traduce.
-import { TYPES, FINISHES } from '../content/pricing.js';
+import { TYPES, FINISHES, PROPERTIES, ZONES } from '../content/pricing.js';
 
 export const MIN_TEXT = 10;
 export const MAX_TEXT = 2000;
@@ -22,13 +22,15 @@ export const VALIDATORS = {
   email: (v) => { const s = (v || '').trim(); return !s ? 'required' : !EMAIL_RE.test(s) || s.length > 200 ? 'email' : null; },
   telefono: (v) => { const s = (v || '').replace(/[\s.\-()]/g, ''); return !s ? 'required' : !/^\+?\d{9,15}$/.test(s) ? 'phone' : null; },
   tipo: (v) => (!v ? 'required' : TYPES.includes(v) ? null : 'required'),
+  vivienda: (v) => (!v ? 'required' : PROPERTIES.includes(v) ? null : 'required'),
+  zona: (v) => (!v ? 'required' : ZONES.includes(v) ? null : 'required'),
   acabados: (v) => (!v ? 'required' : FINISHES.includes(v) ? null : 'required'),
   m2: (v) => { if (v === '' || v == null) return 'required'; const n = Number(v); return !Number.isFinite(n) || n < 1 || n > 2000 ? 'm2' : null; },
   descripcion: (v) => { const s = (v || '').trim(); return !s ? 'required' : s.length < MIN_TEXT ? 'minLen' : s.length > MAX_TEXT ? 'maxLen' : null; },
   privacidad: (v) => (v === true ? null : 'privacy'),
 };
 
-export const FIELD_ORDER = ['nombre', 'email', 'telefono', 'tipo', 'acabados', 'm2', 'descripcion', 'privacidad'];
+export const FIELD_ORDER = ['nombre', 'email', 'telefono', 'tipo', 'vivienda', 'zona', 'acabados', 'm2', 'descripcion', 'privacidad'];
 
 export function validate(data) {
   const errors = {};

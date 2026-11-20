@@ -122,9 +122,9 @@ export default function Loader() {
               if (!g) return;
               nodes.current[i] = { g, back: g.children[0], mid: g.children[1], front: g.children[2] };
             }} transform={`translate(${p.from.x} ${p.from.y}) rotate(${p.from.r})`}>
-              <path d={d} fillRule="evenodd" fill="#0B0B0B" style={{ opacity: 0 }} />
-              <path d={d} fillRule="evenodd" fill="#3A3A38" style={{ opacity: 0 }} />
-              <path d={d} fillRule="evenodd" fill={p.fill} stroke="#0B0B0B" strokeWidth="1" vectorEffect="non-scaling-stroke"
+              <path d={d} fillRule="evenodd" fill="#15120E" style={{ opacity: 0 }} />
+              <path d={d} fillRule="evenodd" fill="#4A433A" style={{ opacity: 0 }} />
+              <path d={d} fillRule="evenodd" fill={p.fill} stroke="#15120E" strokeWidth="1" vectorEffect="non-scaling-stroke"
                 pathLength="1" strokeDasharray="1" style={{ strokeDashoffset: 1, fillOpacity: 0 }} />
             </g>
           );

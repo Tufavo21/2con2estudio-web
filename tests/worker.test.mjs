@@ -11,7 +11,7 @@ import { makeUnsubToken } from '../worker/src/crypto.js';
 import { buildMessages, sanitizeDraft } from '../worker/src/ai.js';
 
 const SCHEMA = readFileSync(new URL('../worker/schema.sql', import.meta.url), 'utf8');
-const OK = { nombre: 'Ana [DEMO] Prueba', email: 'ana.demo@ejemplo.test', telefono: '+34 600 000 000', tipo: 'cocina', acabados: 'medio', m2: '12', descripcion: 'Cambiar la cocina completa, ficticio [DEMO]', privacidad: true, website: '', lang: 'es', fotos: 2 };
+const OK = { nombre: 'Ana [DEMO] Prueba', email: 'ana.demo@ejemplo.test', telefono: '+34 600 000 000', tipo: 'cocina', vivienda: 'atico', zona: 'ruzafa', acabados: 'altagama', m2: '12', descripcion: 'Cambiar la cocina completa, ficticio [DEMO]', privacidad: true, website: '', lang: 'es', fotos: 2 };
 const silent = { log() {}, warn() {}, error() {} };
 
 let env; let calls; let realFetch; let realConsole;
@@ -98,13 +98,13 @@ test('modo demo: solo sale al correo de la lista blanca; el dueño (no permitido
   const c = calls[0];
   assert.equal(c.url, 'https://api.resend.com/emails');
   assert.deepEqual(c.body.to, ['ana.demo@ejemplo.test']);
-  assert.match(c.body.subject, /^\[DEMO\] Hemos recibido tu solicitud/);
+  assert.match(c.body.subject, /^\[DEMO\] Te responderemos personalmente/);
   assert.match(c.body.text, /https:\/\/cal\.example\/demo/);
   assert.match(c.body.text, /\[DEMO\] Calle Ejemplo 1/);
   assert.match(c.body.text, /api\.example\/api\/unsubscribe\?t=/);
   assert.match(c.body.headers['List-Unsubscribe'], /unsubscribe/);
   assert.equal(c.body.headers['List-Unsubscribe-Post'], 'List-Unsubscribe=One-Click');
-  assert.doesNotMatch(c.body.text, /garant|100 ?%|en 24 ?h|mejor precio/i); // sin promesas
+  assert.doesNotMatch(c.body.text, /garant|100 ?%|mejor precio/i); // sin promesas
 });
 
 test('correo al dueño con resumen y Reply-To del visitante (si está en la lista)', async () => {

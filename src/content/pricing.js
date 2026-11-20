@@ -6,6 +6,8 @@
 export const SHOW_ESTIMATE = false;
 
 export const FINISHES = ['premium', 'altagama', 'lujo'];
+export const PROPERTIES = ['atico', 'casa', 'piso', 'segunda', 'otra'];
+export const ZONES = ['eixample', 'ruzafa', 'playa', 'ciutatvella', 'otra'];
 export const TYPES = ['integral', 'cocina', 'bano', 'interiorismo', 'otra'];
 
 export const PRICING = {

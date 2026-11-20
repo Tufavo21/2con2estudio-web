@@ -19,6 +19,8 @@ CREATE TABLE IF NOT EXISTS leads (
   status_at   TEXT NOT NULL,
   reminded1_at TEXT,
   reminded2_at TEXT,
+  property    TEXT,                             -- atico | casa | piso | segunda | otra
+  zone        TEXT,                             -- eixample | ruzafa | playa | ciutatvella | otra
   is_demo     INTEGER NOT NULL DEFAULT 0        -- 1 si se recibió con DEMO_MODE=true
 );
 CREATE INDEX IF NOT EXISTS idx_leads_status_created ON leads (status, created_at);
