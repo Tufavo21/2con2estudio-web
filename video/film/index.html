@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="es" style="--W: 1920px; --H: 1080px"
+  data-composition-variables='[
+    {"id":"porcelanosa","type":"string","label":"Línea del cierre sobre Porcelanosa (vacío = no se muestra; pendiente de confirmar)","default":""},
+    {"id":"telefono","type":"string","label":"Teléfono","default":"+34 620 22 21 23"},
+    {"id":"instagram","type":"string","label":"Instagram","default":"@2con2estudio"},
+    {"id":"web","type":"string","label":"Enlace web (vacío = no se muestra)","default":""}
+  ]'>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1920, height=1080" />
+<title>2con2estudio · vídeo 16:9</title>
+<link rel="stylesheet" href="assets/film.css" />
+<link rel="stylesheet" href="assets/v3.css" />
+<script src="assets/lib/gsap.min.js"></script>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="58" data-width="1920" data-height="1080">
+
+  <canvas id="gl" width="1920" height="1080"></canvas>
+
+  <section class="layer scene paper" id="s-tilt" data-layout-allow-overflow>
+    <div class="ghost" data-layout-ignore>Interiorismo · Reformas a medida · Interiorismo · Reformas a medida</div>
+    <header class="shead" id="tilt-head">
+      <div class="m"><span class="mi lbl">Selección de proyectos</span></div>
+      <div class="m"><span class="mi shead__t sheen-text">Proyectos</span></div>
+    </header>
+    <div class="tilt-row" id="tilt-row">
+      <article class="tcard" data-img="assets/img/v3/card-cocina-ia.jpg" data-title="Cocina con isla de mármol" data-desc="Roble en espiga y latón" data-kind="Cocina" data-tag="Ilustrativa"></article>
+      <article class="tcard" data-img="assets/img/v3/card-marmol.jpg" data-title="Cocina en mármol y negro" data-desc="Isla de piedra veteada" data-kind="Cocina" data-tag="Real"></article>
+      <article class="tcard" data-img="assets/img/v3/card-bano.jpg" data-title="Baño en gres piedra" data-desc="Hornacina y bañera exenta" data-kind="Baño" data-tag="Real"></article>
+      <article class="tcard" data-img="assets/img/v3/card-roble.jpg" data-title="Cocina de roble y grafito" data-desc="Columnas y hornos integrados" data-kind="Cocina" data-tag="Real"></article>
+    </div>
+  </section>
+
+  <section class="layer scene paper" id="s-pin" data-layout-allow-overflow>
+    <div class="ghost" data-layout-ignore>Proyecto · Diseño · Obra · Entrega · Proyecto · Diseño · Obra · Entrega</div>
+    <header class="shead" id="pin-head">
+      <div class="m"><span class="mi lbl">Cómo trabajamos</span></div>
+      <div class="m"><span class="mi shead__t sheen-text">Del proyecto</span></div>
+      <div class="m"><span class="mi shead__t sheen-text">a la entrega</span></div>
+    </header>
+    <div class="plist" id="plist">
+      <p class="psec" id="psec-pin"><span class="m"><span class="mi">Fijado</span></span></p>
+      <p class="psec" id="psec-all"><span class="m"><span class="mi">Todos los pasos</span></span></p>
+      <div class="pitem" data-name="Proyecto" data-sub="Paso 1 · Estudio previo" data-icon="plan"></div>
+      <div class="pitem" data-name="Diseño" data-sub="Paso 2 · Planos y 3D" data-icon="pencil"></div>
+      <div class="pitem" data-name="Obra" data-sub="Paso 3 · Ejecución" data-icon="brick"></div>
+      <div class="pitem" data-name="Entrega" data-sub="Paso 4 · Llaves en mano" data-icon="key"></div>
+    </div>
+  </section>
+
+  <section class="layer scene" id="s-ba" data-layout-allow-overflow>
+    <div class="view" id="ba-view">
+      <div class="bimg" id="ba-after"><img src="assets/img/v3/despues.jpg" alt="" /></div>
+      <div class="bimg" id="ba-before"><img src="assets/img/v3/antes.jpg" alt="" /></div>
+      <div class="bimg" id="sw-night"><img src="assets/img/v3/noche.jpg" alt="" /></div>
+      <div id="glows" data-layout-ignore></div>
+      <div id="divider" data-layout-ignore><i id="handle"></i></div>
+      <div class="ptag" id="tag-antes"><span class="m"><span class="mi">Antes</span></span></div>
+      <div class="ptag" id="tag-despues"><span class="m"><span class="mi">Después</span></span></div>
+      <div class="glass" id="swpanel">
+        <div class="glass__txt">
+          <div class="glass__l">Iluminación</div>
+          <div class="glass__s"><span class="m"><span class="mi" id="st-dia">Día</span></span><span class="m"><span class="mi" id="st-noche">Noche</span></span></div>
+        </div>
+        <div class="sw" id="sw">
+          <i class="sw__glow"></i>
+          <span class="sw__track"><i class="sw__off"></i><i class="sw__on"></i></span>
+          <i class="sw__liquid"></i>
+          <i class="sw__thumb"></i>
+        </div>
+      </div>
+      <div class="note" id="ba-note"><span class="m"><span class="mi lbl">Imagen ilustrativa</span></span></div>
+    </div>
+    <div class="band" id="ba-band">
+      <div class="m"><span class="mi lbl">Antes y después</span></div>
+      <div class="m"><span class="mi band__t sheen-text">Del espacio vacío al hogar</span></div>
+    </div>
+  </section>
+
+  <section class="layer scene" id="s-det">
+    <div class="bimg" id="det-img"><img src="assets/img/v3/detalle.jpg" alt="" /></div>
+    <i id="det-sweep" data-layout-ignore></i>
+  </section>
+
+  <section class="layer scene paper" id="s-mat" data-layout-allow-overflow>
+    <header class="shead" id="mat-head">
+      <div class="m"><span class="mi lbl">Materiales</span></div>
+      <div class="m"><span class="mi shead__t sheen-text">Materiales de primera</span></div>
+    </header>
+    <div id="chips">
+      <a class="chip" data-l="P" data-title="Porcelánico veteado · gran formato" data-img="assets/img/v3/mat-porcelanico.jpg" data-desc="Piezas de gran formato con veta natural para suelos y paredes continuas."></a>
+      <a class="chip" data-l="R" data-title="Roble en espiga" data-img="assets/img/v3/mat-roble.jpg" data-desc="Tablas de roble natural colocadas en espiga, cálidas y duraderas."></a>
+      <a class="chip" data-l="T" data-title="Travertino" data-img="assets/img/v3/mat-travertino.jpg" data-desc="Piedra natural de poro fino para mesas, encimeras y revestimientos."></a>
+      <a class="chip" data-l="L" data-title="Latón envejecido" data-img="assets/img/v3/mat-laton.jpg" data-desc="Acabado cálido para lámparas, tiradores y grifería."></a>
+    </div>
+    <div id="pcards"></div>
+  </section>
+
+  <div class="layer" id="close" data-layout-allow-overflow>
+    <div id="logo-wrap"><img id="logo" src="assets/img/logo-negro.png" alt="2con2estudio" /></div>
+    <div class="m" id="cta"><span class="mi">Cuéntanos tu proyecto</span></div>
+    <div id="rule"></div>
+    <div class="m info"><span class="mi" id="contact-line"></span></div>
+    <div class="m info" id="ig-line"><span class="mi" id="ig-text"></span></div>
+    <div class="m info" id="web-line"><span class="mi" id="web-text"></span></div>
+    <div class="m info" id="porc-line"><span class="mi" id="porc-text"></span></div>
+  </div>
+
+  <div id="cursor" data-layout-ignore><i class="cur__ring"></i><i class="cur__dot"></i><i class="cur__ripple"></i></div>
+  <div id="vignette" data-layout-ignore></div>
+  <div id="grain" data-layout-ignore></div>
+</div>
+
+<script>
+  window.__timelines = window.__timelines || {};
+  const tl = gsap.timeline({ paused: true });
+  tl.set({}, {}, 58);
+  window.__timelines["main"] = tl;
+</script>
+<script type="module" src="assets/v3.js"></script>
+</body>
+</html>

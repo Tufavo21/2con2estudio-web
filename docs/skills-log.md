@@ -330,3 +330,16 @@ Se añade un Worker de Cloudflare (`worker/`) y se conecta el formulario existen
 - Regla 8: cabeceras de seguridad en `public/_headers` (CSP, X-Frame-Options, X-Content-Type-Options, HSTS, Referrer-Policy, Permissions-Policy). Ya existían: validación en servidor, honeypot, límite por IP, lista de orígenes (`ALLOWED_ORIGINS`), sin claves en el cliente.
 - 8b (modo guía, cliente/DOM, auth/web, despliegue, cadena de suministro, IA/LLM): sin recursos externos en el front; el borrador de IA solo va al propietario y no se envía.
 - Pendiente: `npm audit` (sin red aquí), `ALLOWED_ORIGINS` vacío (rellenar con el dominio real), probar la CSP en el navegador, Cloudflare WAF / SSL Full (strict) / 2FA (lo hace el usuario), revisión con Codex (Fase 6) no ejecutada.
+
+## Vídeo motion v3 (22-11-2026) · HyperFrames
+- **Skills:** /hyperframes (contrato de render, check, snapshot), /hyperframes-cli y /media-use (escalado y licencias). /hyperframes-registry se consultó, pero las cinco animaciones se reprodujeron a mano a partir de las referencias React.
+- **Combinación de animaciones:**
+  - Apertura: cubo de cristal (Three.js, refracción de 6 bandas con dispersión controlable) que gira, se acerca y descubre la escena siguiente con un clip-path circular.
+  - TiltCard: inclinación con factor 11 por muelle sobre la posición del cursor, escala 1,05, sombra que crece, foto de −5° a −3° y círculo blanco recortado de 800 px.
+  - PinnedList: FLIP por muelle analítico (380 / 20 / 0,8), entrada de escala 0,96 → 1 e y −6 → 0, y chincheta que gira −45°.
+  - SideBySideSlide: divisor con muelle 300 / 30 que sigue al cursor y vuelve al 50 % con inercia; etiquetas con máscara.
+  - AppleSwitch: agarre con muelle 500 / 25, pulgar con muelle 700 / 48 / 0,55, pista que pasa a verde con halo, barrido circular de día a noche y pulso cálido de luz.
+  - NotionMentionLink: ficha que entra deslizándose en 150 ms, esqueleto con brillo de 600 ms que pasa a contenido y salida con zoom-out al 95 %.
+  - Cierre con máscaras.
+  - Capa común: cursor virtual en curvas con pequeñas dudas y rebote al pulsar, grano, viñeteado, barrido de latón en los titulares, empuje continuo de cámara y textos de fondo desenfocados con parallax.
+- **Determinismo:** muelles con la solución cerrada del oscilador amortiguado. Para objetivos continuos (cursor), el muelle se integra paso a paso con esa misma solución cerrada, a 240 Hz, y se precalcula al cargar. Nada usa requestAnimationFrame ni el reloj.

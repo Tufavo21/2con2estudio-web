@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="es" style="--W: 1920px; --H: 1080px"
+  data-composition-variables='[
+    {"id":"porcelanosa","type":"string","label":"Texto de materiales (pendiente de confirmar)","default":"Trabajamos con Porcelanosa"},
+    {"id":"telefono","type":"string","label":"Teléfono","default":"+34 620 22 21 23"},
+    {"id":"instagram","type":"string","label":"Instagram","default":"@2con2estudio"},
+    {"id":"web","type":"string","label":"Enlace web (vacío = no se muestra)","default":""}
+  ]'>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1920, height=1080" />
+<title>2con2estudio · vídeo 16:9</title>
+<link rel="stylesheet" href="assets/film.css" />
+<script src="assets/lib/gsap.min.js"></script>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="45" data-width="1920" data-height="1080">
+
+  <canvas id="gl" width="1920" height="1080"></canvas>
+
+  <div id="matlabel" data-layout-allow-overflow data-layout-allow-occlusion>
+    <div class="slot" id="mat-a" data-layout-allow-occlusion><span class="m"><span class="mi lbl" data-layout-allow-occlusion>Mármol · imagen ilustrativa</span></span></div>
+  </div>
+
+  <div class="layer" id="shelf">
+    <div id="halftone" data-layout-ignore>Diseño de interiores · Ejecución de obra · Diseño de interiores · Ejecución de obra ·</div>
+    <div id="halftone2" data-layout-ignore>Todo tipo de reformas · Interiorismo a medida · Todo tipo de reformas · Interiorismo a medida ·</div>
+    <div id="floor"></div>
+    <div id="stage" data-layout-ignore>
+      <div id="rig">
+        <div class="card" id="card-0" data-img="assets/img/card-cocina-blanca-compacta.jpg" data-title="Cocina · blanca en L"></div>
+        <div class="card" id="card-1" data-img="assets/img/card-bano-gres-piedra.jpg" data-title="Baño · gres efecto piedra"></div>
+        <div class="card" id="card-2" data-img="assets/img/card-canva-cocina.jpg" data-title="Cocina · negro y latón" data-ilustrativa></div>
+        <div class="card" id="card-3" data-img="assets/img/card-cocina-roble-grafito.jpg" data-title="Cocina · roble y grafito"></div>
+        <div class="card" id="card-4" data-img="assets/img/card-canva-bano.jpg" data-title="Baño · porcelánico veteado" data-ilustrativa></div>
+        <div class="card" id="card-5" data-img="assets/img/card-cocina-obra-molduras.jpg" data-title="Cocina · en obra"></div>
+        <div class="card" id="card-6" data-img="assets/img/card-cocina-marmol-negra.jpg" data-title="Cocina · mármol y negro"></div>
+      </div>
+    </div>
+    <div id="titles"></div>
+    <div id="ruler">
+      <div id="ruler__line"></div>
+      <div id="ruler__mark"></div>
+    </div>
+  </div>
+
+  <div class="layer" id="detail">
+    <svg id="dphoto" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="ink" x="-30%" y="-30%" width="160%" height="160%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.011" numOctaves="3" seed="7" result="n" />
+          <feDisplacementMap in="SourceGraphic" in2="n" scale="90" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+        <mask id="inkmask" maskUnits="userSpaceOnUse"><g id="blots" filter="url(#ink)"></g></mask>
+      </defs>
+      <image id="dimg" href="assets/img/detail-h.jpg" preserveAspectRatio="xMidYMid slice" mask="url(#inkmask)" />
+    </svg>
+    <div id="dtext" data-layout-allow-overflow>
+      <div class="m"><span class="mi lbl">Al detalle</span></div>
+      <div class="lede" id="lede"></div>
+      <div class="m cap"><span class="mi lbl">Cocina · mármol y negro</span></div>
+    </div>
+  </div>
+
+  <div class="layer" id="room" data-layout-allow-overflow>
+    <div id="rview">
+    <div class="rimg" id="r0"><img src="assets/img/room-0.jpg" alt="" /></div>
+    <div class="rimg" id="r1"><img src="assets/img/room-1.jpg" alt="" /></div>
+    <div class="rimg" id="r2"><img src="assets/img/room-2.jpg" alt="" /></div>
+    <canvas id="r3" width="1920" height="1080"></canvas>
+    <div class="rimg" id="r4"><img src="assets/img/room-4.jpg" alt="" /></div>
+    <div id="edge" data-layout-ignore></div>
+    <div id="lightline" data-layout-ignore></div>
+    <div class="curtain" id="curL" data-layout-ignore></div>
+    <div class="curtain" id="curR" data-layout-ignore></div>
+    </div>
+    <svg id="plan" xmlns="http://www.w3.org/2000/svg" data-layout-ignore></svg>
+    <div id="tags"></div>
+    <div id="rhead">
+      <div class="m"><span class="mi lbl">Del proyecto a la obra</span></div>
+      <div class="m"><span class="mi rhead__t">Del espacio vacío</span></div>
+      <div class="m"><span class="mi rhead__t">al hogar</span></div>
+    </div>
+    <div id="band">
+      <div class="m"><span class="mi lbl">Del espacio vacío al hogar</span></div>
+      <div class="m"><span class="mi band__t">2con2estudio</span></div>
+    </div>
+    <div id="rnote"><span class="m"><span class="mi lbl">Imagen ilustrativa</span></span></div>
+  </div>
+
+  <div class="layer" id="close" data-layout-allow-overflow>
+    <div id="logo-wrap"><img id="logo" src="assets/img/logo-negro.png" alt="2con2estudio" /></div>
+    <div class="m" id="cta"><span class="mi">Cuéntanos tu proyecto</span></div>
+    <div id="rule"></div>
+    <div class="m info"><span class="mi" id="contact-line"></span></div>
+    <div class="m info" id="ig-line"><span class="mi" id="ig-text"></span></div>
+    <div class="m info" id="web-line"><span class="mi" id="web-text"></span></div>
+  </div>
+
+  <div id="grain"></div>
+</div>
+
+<script>
+  window.__timelines = window.__timelines || {};
+  const tl = gsap.timeline({ paused: true });
+  tl.set({}, {}, 45);
+  window.__timelines["main"] = tl;
+</script>
+<script type="module" src="assets/film.js"></script>
+</body>
+</html>

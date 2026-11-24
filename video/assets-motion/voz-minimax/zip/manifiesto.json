@@ -1,0 +1,88 @@
+{
+  "toma": "A",
+  "descripcion": "serena / premium",
+  "voz": "Spanish_CaptivatingStoryteller",
+  "emotion": "neutral",
+  "speed": 0.95,
+  "duracion_total_s": 32.695,
+  "pausas_detectadas": [
+    {
+      "inicio_s": 3.22,
+      "fin_s": 5.2
+    },
+    {
+      "inicio_s": 6.68,
+      "fin_s": 7.44
+    },
+    {
+      "inicio_s": 11.48,
+      "fin_s": 13.42
+    },
+    {
+      "inicio_s": 17.24,
+      "fin_s": 19.08
+    },
+    {
+      "inicio_s": 22.76,
+      "fin_s": 23.52
+    },
+    {
+      "inicio_s": 26.24,
+      "fin_s": 28.08
+    },
+    {
+      "inicio_s": 29.4,
+      "fin_s": 30.4
+    }
+  ],
+  "locuciones": [
+    {
+      "n": 1,
+      "texto": "Cada gran espacio empieza con una idea.",
+      "pausa_s": 1.5,
+      "archivo": "01_cada_gran_espacio_empieza_co.mp3"
+    },
+    {
+      "n": 2,
+      "texto": "Dos con dos estudio.",
+      "pausa_s": 0.4,
+      "archivo": "02_dos_con_dos_estudio.mp3"
+    },
+    {
+      "n": 3,
+      "texto": "Interiorio de lujo y reformas a medida, en Valencia.",
+      "pausa_s": 1.5,
+      "archivo": "03_interiorio_de_lujo_y_reforma.mp3"
+    },
+    {
+      "n": 4,
+      "texto": "Proyectos pensados al detalle, de principio a fin.",
+      "pausa_s": 1.5,
+      "archivo": "04_proyectos_pensados_al_detall.mp3"
+    },
+    {
+      "n": 5,
+      "texto": "Del espacio vacío al hogar que habías imaginado.",
+      "pausa_s": 0.4,
+      "archivo": "05_del_espacio_vacio_al_hogar_q.mp3"
+    },
+    {
+      "n": 6,
+      "texto": "Diseño, obra y materiales de primera.",
+      "pausa_s": 1.5,
+      "archivo": "06_diseno_obra_y_materiales_de.mp3"
+    },
+    {
+      "n": 7,
+      "texto": "Cuéntanos tu proyecto.",
+      "pausa_s": 0.5,
+      "archivo": "07_cuentanos_tu_proyecto.mp3"
+    },
+    {
+      "n": 8,
+      "texto": "Dos con dos estudio.",
+      "pausa_s": 0.0,
+      "archivo": "08_dos_con_dos_estudio.mp3"
+    }
+  ]
+}
